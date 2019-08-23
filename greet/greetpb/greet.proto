@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package greet;
+
+option go_package="greetpb";
+
+message Greeting {
+    string fn = 1;
+    string ln = 2;
+}
+
+message GreetRequest {
+    Greeting greeting = 1;
+}
+
+message GreetResponse {
+    string result = 1;
+}
+
+service GreatService {
+    // Unary
+    rpc Grre (GreetRequest) returns (GreetResponse){};
+}
