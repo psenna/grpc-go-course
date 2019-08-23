@@ -28,6 +28,10 @@ func main() {
 		},
 	}
 
-	c.Grre(context.Background(), in*greetpb.GreetRequest)
-	fmt.Printf("Created client: %f", c)
+	res, err := c.Grre(context.Background(), req)
+	if err != nil {
+		log.Fatalf("%v", err)
+	}
+
+	log.Printf("%v", res.Result)
 }

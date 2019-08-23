@@ -14,7 +14,7 @@ import (
 type server struct{}
 
 func (*server) Grre(ctx context.Context, req *greetpb.GreetRequest) (*greetpb.GreetResponse, error) {
-	fmt.Printf("foi")
+	fmt.Println("foi")
 	firstName := req.GetGreeting().GetFn()
 
 	result := "Hello " + firstName
